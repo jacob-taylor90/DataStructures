@@ -62,6 +62,19 @@ public class LinkedList {
 	    return temp;
 	}
 
+    //Method to prepend a new node to the beginning of the LinkedList
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {

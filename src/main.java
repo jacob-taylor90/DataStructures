@@ -2,6 +2,7 @@ public class main {
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(4);
         myLinkedList.append(7);
+        myLinkedList.prepend(11);
 
         myLinkedList.getHead();
         myLinkedList.getTail();
@@ -13,12 +14,14 @@ public class main {
         /*
             Expected OUTPUT:
             ----------------
-            Head: 4
+            Head: 11
             Tail: 7
-            Length: 2
+            Length: 3
 
             Linked List: 
-            4 7
+            11
+            4
+            7
          */
     }
 }
