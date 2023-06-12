@@ -19,6 +19,27 @@ public class LinkedList {
         length = 1;
     }
 
+    public void append(int value) {
+       /*
+            1. Create new node with value
+            2. check if linked list is null
+              a. if null, point head & tail to new node
+              b. else, iterate through linked list and find last index
+            3. point last index to new node
+            4. point tail to new node
+        */
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        length++;
+
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
