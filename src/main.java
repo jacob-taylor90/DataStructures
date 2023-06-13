@@ -4,9 +4,11 @@ public class Main {
         myLinkedList.append(2);
         myLinkedList.append(3);
         myLinkedList.append(4);
+        myLinkedList.append(5);
 
-        myLinkedList.reverse();
-        
-        myLinkedList.printList();
+        int k = 3;
+        int result = myLinkedList.findKthFromEnd(k).value;
+
+        System.out.println(result); // Output: 4
     }
 }
