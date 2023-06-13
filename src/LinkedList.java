@@ -136,6 +136,29 @@ public class LinkedList {
         }
         return false;
     }
+
+    public boolean insert(int index, int value) {
+	    //Return false if index is out of bounds
+	    if (index < 0 || index > length) return false;
+	    //Call prepend if index is 0 
+	    if (index == 0) {
+	        prepend(value);
+	        return true;
+	    }
+	    //Call append if index is equal to length
+	    if (index == length) {
+	        append(value);
+	        return true;
+	    }
+	    //Insert new node in middle
+	    Node newNode = new Node(value);
+	    Node temp = get(index - 1);
+	    
+	    newNode.next = temp.next;
+	    temp.next = newNode;
+	    length++;
+	    return true;
+	}
     
 }
 
