@@ -6,9 +6,11 @@ public class Main {
         myLinkedList.append(4);
         myLinkedList.append(5);
 
-        int k = 3;
-        int result = myLinkedList.findKthFromEnd(k).value;
+        System.out.println("List before reversal");
+        myLinkedList.printList();
 
-        System.out.println(result); // Output: 4
+        myLinkedList.reverseBetween(1, 3);
+        System.out.println("List after reversal");
+        myLinkedList.printList();
     }
 }
