@@ -227,5 +227,35 @@ public class LinkedList {
         }
         head = dummyNode.next;
     }
+
+    public void partitionList(int x) {
+        //check if list is empty
+        if (head == null) return;
+        
+        //create two dummy nodes and two pointer nodes to keep track of the two partitions
+        Node dummy1 = new Node(0);
+        Node dummy2 = new Node(0);
+        
+        Node prev1 = dummy1;
+        Node prev2 = dummy2;
+        
+        Node current = head;
+        
+        //Loop to run until current hits the end of the list
+        while(current != null) {
+            //logic to place and concat the two partitions
+            if (current.value < x) {
+                prev1.next = current;
+                prev1 = current;
+            } else {
+                prev2.next = current;
+                prev2 = current;
+            }
+            current = current.next;
+        }
+        prev2.next = null;
+        prev1.next = dummy2.next;
+        head = dummy1.next;
+    }
 }
 
